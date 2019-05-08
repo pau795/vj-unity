@@ -8,6 +8,7 @@ public class PlantSpawner : MonoBehaviour
     public GameObject plant;
     private bool used;
     private Color color;
+    public Vector3 positionOffset;   
     void OnMouseEnter() {
         if (ready){
             color = GetComponent<Renderer>().material.color;
@@ -20,10 +21,11 @@ public class PlantSpawner : MonoBehaviour
     }
     void OnMouseDown(){
         if (!used && ready){
-            GameObject obj = (GameObject)Instantiate(plant, transform.position, transform.rotation);
+            GameObject obj = (GameObject)Instantiate(plant, transform.position+positionOffset, transform.rotation);
             transform.parent.parent.gameObject.GetComponent<GardenFiller>().reset = true;
             GetComponent<Renderer>().material.color = color;
             used = true;
+            print(transform.position);
         }
     }
 
@@ -31,10 +33,12 @@ public class PlantSpawner : MonoBehaviour
     void Start() {
         used = false;
         ready = false;
+        positionOffset = new Vector3(0, 0, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
+
     }
 }
