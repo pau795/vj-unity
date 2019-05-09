@@ -25,7 +25,6 @@ public class PlantSpawner : MonoBehaviour
             transform.parent.parent.gameObject.GetComponent<GardenFiller>().reset = true;
             GetComponent<Renderer>().material.color = color;
             used = true;
-            print(transform.position);
         }
     }
 
