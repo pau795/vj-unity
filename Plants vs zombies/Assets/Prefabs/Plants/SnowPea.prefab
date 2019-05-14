@@ -78,6 +78,36 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!54 &601823313711999701
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224531678476634914}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!136 &3224167654940244179
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224531678476634914}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 3
+  m_Height: 6
+  m_Direction: 1
+  m_Center: {x: 0, y: 2.5, z: 0}
 --- !u!1001 &8872377331838608510
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -145,12 +175,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2102125148061651488, guid: 7d684eed8ec832a4d927bf8b0ed0d068,
-        type: 3}
-      propertyPath: bullet
-      value: 
-      objectReference: {fileID: 1118074533149406625, guid: ffc3e952268c8104892bfcf19ac42ff6,
-        type: 3}
     - target: {fileID: 8664000391699788642, guid: 7d684eed8ec832a4d927bf8b0ed0d068,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -201,8 +225,26 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: fda9dea49f530aa42bbe56a267d2a781, type: 2}
+    - target: {fileID: 2102125148061651488, guid: 7d684eed8ec832a4d927bf8b0ed0d068,
+        type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 1118074533149406625, guid: ffc3e952268c8104892bfcf19ac42ff6,
+        type: 3}
+    - target: {fileID: 5107555605718506968, guid: 7d684eed8ec832a4d927bf8b0ed0d068,
+        type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 1118074533149406625, guid: ffc3e952268c8104892bfcf19ac42ff6,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d684eed8ec832a4d927bf8b0ed0d068, type: 3}
+--- !u!1 &224531678476634914 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8664000391699754844, guid: 7d684eed8ec832a4d927bf8b0ed0d068,
+    type: 3}
+  m_PrefabInstance: {fileID: 8872377331838608510}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4771766631919959325 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4114526806492666211, guid: 7d684eed8ec832a4d927bf8b0ed0d068,

@@ -4,8 +4,37 @@ using UnityEngine;
 
 public class SceneElements : MonoBehaviour
 {
+    public abstract class Character
+    {
+        public int HP, attack, rateOfFire;
+        public abstract bool shouldCollide();
+    }
+
+    public class Plant : Character
+    {
+        public override bool shouldCollide()
+        {
+            return true;
+        }
+    }
+
+    public class Zombie : Character
+    {
+        public int speed;
+
+        public override bool shouldCollide()
+        {
+            return false;
+        }
+
+    }
+
+
     public GameObject mower;
     public GameObject fence;
+
+    public GameObject standardZombie;
+    public GameObject bucketZombie;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,5 +48,10 @@ public class SceneElements : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void zombieSpawn()
+    {
+
     }
 }

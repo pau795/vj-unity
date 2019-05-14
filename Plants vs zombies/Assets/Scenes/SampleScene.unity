@@ -737,6 +737,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mower: {fileID: 2245394744414962654, guid: 8d1e0a1dd5d233e4e87841161b57fee8, type: 3}
   fence: {fileID: 4911650551020943548, guid: b9083e2efdcd4d5448739de0707367fd, type: 3}
+  standardZombie: {fileID: 2917558242606716976, guid: 6ef639e415460ee4e8be41582114c508,
+    type: 3}
+  bucketZombie: {fileID: 7059944277306378654, guid: 4b46413cdbf335c499c246bef91d91b2,
+    type: 3}
 --- !u!1 &745478252
 GameObject:
   m_ObjectHideFlags: 0

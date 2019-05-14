@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlantAttack : MonoBehaviour
+public class PeaBehaviour : MonoBehaviour
 {
     public GameObject bullet;
     Animator animator;

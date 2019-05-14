@@ -54,11 +54,14 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\GardenFiller.cs" />
+     <Compile Include="Assets\Scripts\GlobalVars.cs" />
      <Compile Include="Assets\Scripts\ObjectRemover.cs" />
-     <Compile Include="Assets\Scripts\PlantAttack.cs" />
+     <Compile Include="Assets\Scripts\PeaBehaviour.cs" />
+     <Compile Include="Assets\Scripts\PlantControl.cs" />
      <Compile Include="Assets\Scripts\PlantSpawner.cs" />
      <Compile Include="Assets\Scripts\SceneElements.cs" />
      <Compile Include="Assets\Scripts\ShotMovement.cs" />
+     <Compile Include="Assets\Scripts\ZombieBehaviour.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>C:/Users/pau_7/Documents/GitHub/vj-unity/Plants vs zombies/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
