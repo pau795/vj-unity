@@ -61,7 +61,7 @@ public class GardenFiller : MonoBehaviour
                 GameObject tile = row.GetChild(j).gameObject;
                 tile.GetComponent<PlantSpawner>().ready = true;
                 tile.GetComponent<PlantSpawner>().plant = potatoMine;
-                Vector3 v = new Vector3(0.0f, 0.0f, 3.0f);
+                Vector3 v = new Vector3(0, 0, 3);
                 tile.GetComponent<PlantSpawner>().positionOffset = v;
             }
         }

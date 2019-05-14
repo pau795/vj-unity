@@ -318,8 +318,8 @@ GameObject:
   m_Component:
   - component: {fileID: 738661742606626360}
   - component: {fileID: 7033831994467071464}
-  - component: {fileID: 2089442953881236366}
   - component: {fileID: 2024584621842096246}
+  - component: {fileID: 7777814090156942879}
   m_Layer: 0
   m_Name: PotatoMine
   m_TagString: Untagged
@@ -361,20 +361,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!136 &2089442953881236366
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 738661742606463512}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 30
-  m_Height: 50
-  m_Direction: 1
-  m_Center: {x: 65, y: 0, z: 5}
 --- !u!54 &2024584621842096246
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -391,6 +377,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &7777814090156942879
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 738661742606463512}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 50, y: 50, z: 35}
+  m_Center: {x: 65, y: 0, z: 10}
 --- !u!1 &738661742606463516
 GameObject:
   m_ObjectHideFlags: 0
