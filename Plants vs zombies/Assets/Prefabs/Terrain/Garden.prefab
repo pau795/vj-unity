@@ -1936,11 +1936,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42e38c4abd9933b4d811f7b517245e14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  garden: {fileID: 4516147087727423457}
+  reset: 0
   peaShooter: {fileID: 8664000391699754844, guid: 7d684eed8ec832a4d927bf8b0ed0d068,
     type: 3}
   sunFlower: {fileID: 7011133827824476273, guid: 5ec31311656eca84c84e667f2a3cd856,
     type: 3}
+  snowPea: {fileID: 224531678476634914, guid: bd701b181adc8d44183341aa2cbb747c, type: 3}
+  potatoMine: {fileID: 738661742606463512, guid: 3be1982c4e4531141a4e57540375e4dd,
+    type: 3}
+  chomper: {fileID: 2498223064262897044, guid: 8c81ee3f8eff776449b3aabca8edd34e, type: 3}
 --- !u!1 &4516147087760266121
 GameObject:
   m_ObjectHideFlags: 0

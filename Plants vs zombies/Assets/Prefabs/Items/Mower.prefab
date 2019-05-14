@@ -9,19 +9,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100002, guid: 79f2a0d9b123f8f49a4bdb089cff85ff, type: 3}
       propertyPath: m_Name
-      value: Mower (1)
+      value: Mower
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 79f2a0d9b123f8f49a4bdb089cff85ff, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.93
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 79f2a0d9b123f8f49a4bdb089cff85ff, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 79f2a0d9b123f8f49a4bdb089cff85ff, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 79f2a0d9b123f8f49a4bdb089cff85ff, type: 3}
       propertyPath: m_LocalRotation.x

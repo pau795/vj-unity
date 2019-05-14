@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlantAttack : MonoBehaviour
 {
-    public GameObject pea;
+    public GameObject bullet;
     Animator animator;
     // Start is called before the first frame update
     void Start()
@@ -23,7 +23,7 @@ public class PlantAttack : MonoBehaviour
     }
 
     void shoot(){
-       Instantiate(pea, transform.position + new Vector3(1.0f, 2.2f, 0.0f), transform.rotation);
+       Instantiate(bullet, transform.position + new Vector3(1.0f, 2.2f, 0.0f), transform.rotation);
     }
    
 

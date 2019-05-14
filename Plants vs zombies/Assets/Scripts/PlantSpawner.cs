@@ -21,7 +21,7 @@ public class PlantSpawner : MonoBehaviour
     }
     void OnMouseDown(){
         if (!used && ready){
-            GameObject obj = (GameObject)Instantiate(plant, transform.position+positionOffset, transform.rotation);
+            GameObject obj = (GameObject)Instantiate(plant, transform.position+positionOffset, plant.transform.rotation);
             transform.parent.parent.gameObject.GetComponent<GardenFiller>().reset = true;
             GetComponent<Renderer>().material.color = color;
             used = true;
