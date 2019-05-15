@@ -759,12 +759,12 @@ GameObject:
   m_Component:
   - component: {fileID: 2917558242606416976}
   - component: {fileID: 2917558242614143882}
-  - component: {fileID: 9105089517209386877}
-  - component: {fileID: 3727832612088936502}
   - component: {fileID: 2036078974945715585}
+  - component: {fileID: 1149660962244168799}
+  - component: {fileID: 7299570892272453251}
   m_Layer: 0
   m_Name: StandardZombie
-  m_TagString: Untagged
+  m_TagString: Zombie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -798,42 +798,12 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 47282fcb2018c184c8b4086a4b82dd02, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &9105089517209386877
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2917558242606716976}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b41291fdbc16f84086f948018924892, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HP: 0
-  speed: 0
-  attack: 0
-  rateOfFire: 0
---- !u!136 &3727832612088936502
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2917558242606716976}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.4
-  m_Height: 2.3
-  m_Direction: 1
-  m_Center: {x: 0, y: 1.1, z: 0}
 --- !u!54 &2036078974945715585
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -850,6 +820,35 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &1149660962244168799
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2917558242606716976}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7, y: 2.1, z: 1}
+  m_Center: {x: 0, y: 1.1, z: 0}
+--- !u!114 &7299570892272453251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2917558242606716976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b41291fdbc16f84086f948018924892, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 100
+  speed: 1
+  attack: 1
+  rateOfFire: 1
 --- !u!1 &2917558242606716978
 GameObject:
   m_ObjectHideFlags: 0

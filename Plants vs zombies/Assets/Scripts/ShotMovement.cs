@@ -14,6 +14,13 @@ public class ShotMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Zombie") { 
+            Destroy(gameObject);
+        }
     }
 }
