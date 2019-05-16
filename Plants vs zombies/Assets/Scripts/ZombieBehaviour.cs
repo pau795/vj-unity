@@ -4,53 +4,74 @@ using UnityEngine;
 
 public class ZombieBehaviour : MonoBehaviour
 {
-    enum ZombieStates
-    {
-        IDLE, MOVE, ATTACK, ATTACKING, DYING, DEATH
-    };
-
-    public float HP, speed, attack, rateOfFire;
+    float speed, attack, rateOfFire;
     Animator animator;
-    ZombieStates state;
+
+
+    int walkingHash = Animator.StringToHash("Base Layer.Zombie Walking");
+    int IdleHash = Animator.StringToHash("Base Layer.Zombie Idle");
+
+    private GameObject target;
+    bool attacking;
+    bool once;
 
     // Start is called before the first frame update
     void Start()
     {
+        speed = GetComponent<ObjectStats>().speed;
+        attack = GetComponent<ObjectStats>().attack;
+        rateOfFire = GetComponent<ObjectStats>().rateOfFire;
         animator = GetComponent<Animator>();
-        state = ZombieStates.MOVE;
-        
-        animator.SetTrigger("move");
-        animator.SetFloat("speed", speed);
+        attacking = false;
+        once = true;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (state == ZombieStates.MOVE)
+        AnimatorStateInfo state = animator.GetCurrentAnimatorStateInfo(0);
+        if (state.fullPathHash == walkingHash)
         {
-            transform.position = transform.position + new Vector3(-speed*Time.deltaTime, 0.0f, 0.0f);
+            transform.position = transform.position + new Vector3(-speed * Time.deltaTime, 0.0f, 0.0f);
         }
-        if (state == ZombieStates.ATTACK)
-        {           
-            int randomNumber = Random.Range(1, 3);
-
-            animator.SetTrigger("attack" + randomNumber);
-            animator.SetFloat("rateOfFire", rateOfFire);
-            state = ZombieStates.ATTACKING;
+        if (state.fullPathHash == IdleHash)
+        {
+            if (attacking && once)
+            {
+                int randomNumber = Random.Range(1, 4);
+                animator.SetTrigger("attack" + randomNumber);
+                animator.SetFloat("rateOfFire", rateOfFire);
+                once = false;
+            }
+            else
+            {
+                animator.SetTrigger("move");
+                animator.SetFloat("speed", speed);
+            }
+            
         }
-
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision other)
     {
-        if ( state != ZombieStates.ATTACK && state != ZombieStates.ATTACKING && other.gameObject.tag == "Plant")
+        if (once && other.gameObject.tag == "Plant")
         {
-            state = ZombieStates.ATTACK;
+            animator.SetTrigger("stand");
+            target = other.gameObject;
+            attacking = true;
         }
     }
 
-    void onAttackFisnish()
+    void doDamage()
     {
-        state = ZombieStates.ATTACK;
+        target.GetComponent<ObjectStats>().HP -= attack;
+        if (target.GetComponent<ObjectStats>().HP <= 0)
+        {
+            attacking = false;
+            target.GetComponent<ObjectStats>().HP = 0;
+        }
+        once = true;
+
     }
 }

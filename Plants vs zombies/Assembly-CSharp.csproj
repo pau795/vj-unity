@@ -56,9 +56,9 @@
      <Compile Include="Assets\Scripts\GardenFiller.cs" />
      <Compile Include="Assets\Scripts\MainMenu.cs" />
      <Compile Include="Assets\Scripts\ObjectRemover.cs" />
+     <Compile Include="Assets\Scripts\ObjectStats.cs" />
      <Compile Include="Assets\Scripts\PauseMenu.cs" />
      <Compile Include="Assets\Scripts\PeaBehaviour.cs" />
-     <Compile Include="Assets\Scripts\PlantControl.cs" />
      <Compile Include="Assets\Scripts\PlantSpawner.cs" />
      <Compile Include="Assets\Scripts\SceneElements.cs" />
      <Compile Include="Assets\Scripts\ShotMovement.cs" />
