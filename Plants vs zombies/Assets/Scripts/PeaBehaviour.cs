@@ -6,10 +6,13 @@ public class PeaBehaviour : MonoBehaviour
 {
     public GameObject bullet;
     Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
+        /*Component[] a = GetComponents(typeof(Component));
+        foreach (Component e in a) print(e.ToString());*/
     }
 
     // Update is called once per frame
@@ -20,6 +23,19 @@ public class PeaBehaviour : MonoBehaviour
             animator.SetTrigger("attack");
         }
         
+    }
+
+    public void die()
+    {
+
+        GetComponent<Collider>().enabled = false;
+        animator.SetTrigger("dead");
+    }
+
+    void disappear()
+    {
+        Destroy(gameObject);
+        GetComponent<ObjectStats>().tile.GetComponent<PlantSpawner>().used = false;
     }
 
     void shoot(){

@@ -133,6 +133,16 @@ ModelImporter:
     13700002: mremireh_shoe
   externalObjects:
   - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: emireh_body_material
+    second: {fileID: 2100000, guid: 94d34192f4ed5af43a4803b3385a3eed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: emireh_shoe_material
+    second: {fileID: 2100000, guid: 8cc7f784fed40d549918054f9094d6d5, type: 2}
+  - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: mremireh_body__diffuse

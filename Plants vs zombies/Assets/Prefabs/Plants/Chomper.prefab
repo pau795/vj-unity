@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2498223064262930864}
   - component: {fileID: 2498223064263700886}
   - component: {fileID: 2498223064264831830}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: group_0_-12142775
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 2498223064262930866}
   - component: {fileID: 2498223064263700880}
   - component: {fileID: 2498223064264831824}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: group_0_-328966
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,7 +166,8 @@ GameObject:
   - component: {fileID: 8357994468422751855}
   - component: {fileID: 5031493405670781794}
   - component: {fileID: 2082190480757315434}
-  m_Layer: 0
+  - component: {fileID: 2783150314284926872}
+  m_Layer: 10
   m_Name: Chomper
   m_TagString: Plant
   m_Icon: {fileID: 0}
@@ -241,9 +242,19 @@ MonoBehaviour:
   attack: 1
   speed: 1
   rateOfFire: 1
-  row: 0
-  column: 0
-  garden: {fileID: 0}
+  tile: {fileID: 0}
+--- !u!114 &2783150314284926872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2498223064262897044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03e091dea43cfe747a095c4a22f8c242, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2498223064262897046
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,7 +266,7 @@ GameObject:
   - component: {fileID: 2498223064262930870}
   - component: {fileID: 2498223064263700884}
   - component: {fileID: 2498223064264831828}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: group_0_-11981198
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -332,7 +343,7 @@ GameObject:
   - component: {fileID: 2498223064262930876}
   - component: {fileID: 2498223064263700882}
   - component: {fileID: 2498223064264831826}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: group_0_-3611459
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -409,7 +420,7 @@ GameObject:
   - component: {fileID: 2498223064262930878}
   - component: {fileID: 2498223064263700892}
   - component: {fileID: 2498223064264831836}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: group_0_-8503400
   m_TagString: Untagged
   m_Icon: {fileID: 0}

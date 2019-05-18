@@ -6,20 +6,24 @@ public class ObjectStats : MonoBehaviour
 {
     public float maxHP, HP, attack, speed, rateOfFire;
     public GameObject tile;
-
+    bool dead;
     // Start is called before the first frame update
     void Start()
     {
         HP = maxHP;
+        dead = false;
     }
+
+
 
     // Update is called once per frame
     void Update()
     {
-        if (HP <= 0)
+        if (HP <= 0 && !dead)
         {
-            Destroy(gameObject);
-            if (tag == "Plant") tile.GetComponent<PlantSpawner>().used=false;
+            GetComponent<Collider>().enabled = false;
+            GetComponent<Animator>().SetTrigger("dead");
+            dead = true;
         }
     }
 }

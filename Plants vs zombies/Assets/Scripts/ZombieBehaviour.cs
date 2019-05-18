@@ -6,7 +6,7 @@ public class ZombieBehaviour : MonoBehaviour
 {
     float speed, attack, rateOfFire;
     Animator animator;
-
+    SkinnedMeshRenderer rend;
 
     int walkingHash = Animator.StringToHash("Base Layer.Zombie Walking");
     int IdleHash = Animator.StringToHash("Base Layer.Zombie Idle");
@@ -22,6 +22,7 @@ public class ZombieBehaviour : MonoBehaviour
         attack = GetComponent<ObjectStats>().attack;
         rateOfFire = GetComponent<ObjectStats>().rateOfFire;
         animator = GetComponent<Animator>();
+        rend = transform.GetChild(1).gameObject.GetComponent<SkinnedMeshRenderer>();
         attacking = false;
         once = true;
 
@@ -55,12 +56,48 @@ public class ZombieBehaviour : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        if (once && other.gameObject.tag == "Plant")
+        if (once && other.gameObject.layer == 10)
         {
             animator.SetTrigger("stand");
             target = other.gameObject;
             attacking = true;
         }
+    }
+
+    public void die()
+    {
+        speed = 0;
+        GetComponent<Collider>().enabled = false;
+        animator.SetTrigger("dead");
+    }
+
+    void disappear()
+    {
+        StartCoroutine("fadeOut");
+    }
+
+    IEnumerator fadeOut()
+    {
+        changeMaterialRender();
+        for(float i = 1.0f; i > 0.0f; i -= Time.deltaTime/3)
+        {
+            Color c = rend.material.color;
+            c.a = i;
+            rend.material.color = c;
+            yield return null;
+        }
+        Destroy(gameObject);
+    }
+
+    void changeMaterialRender()
+    {
+        rend.material.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
+        rend.material.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
+        rend.material.SetInt("_ZWrite", 0);
+        rend.material.DisableKeyword("_ALPHATEST_ON");
+        rend.material.EnableKeyword("_ALPHABLEND_ON");
+        rend.material.DisableKeyword("_ALPHAPREMULTIPLY_ON");
+        rend.material.renderQueue = 3000;
     }
 
     void doDamage()

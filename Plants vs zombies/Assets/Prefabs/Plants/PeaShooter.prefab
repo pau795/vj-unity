@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4929094284454980236}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4114526806492666211}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79,7 +79,7 @@ GameObject:
   - component: {fileID: 8664000391699788640}
   - component: {fileID: 8664000391700558656}
   - component: {fileID: 8664000391701688704}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Component#3 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156,7 +156,7 @@ GameObject:
   - component: {fileID: 8664000391699788642}
   - component: {fileID: 8664000391700558658}
   - component: {fileID: 8664000391701688706}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Component#4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -234,7 +234,7 @@ GameObject:
   - component: {fileID: 8664000391699788644}
   - component: {fileID: 8664000391700558660}
   - component: {fileID: 8664000391701688708}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Component#3 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -311,7 +311,7 @@ GameObject:
   - component: {fileID: 8664000391699788646}
   - component: {fileID: 8664000391700558662}
   - component: {fileID: 8664000391701688710}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Component#3 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -388,7 +388,7 @@ GameObject:
   - component: {fileID: 8664000391699788648}
   - component: {fileID: 8664000391700558664}
   - component: {fileID: 8664000391701688712}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Component#2 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -467,7 +467,7 @@ GameObject:
   - component: {fileID: 8664000391699788650}
   - component: {fileID: 8664000391700558666}
   - component: {fileID: 8664000391701688714}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Component#3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -544,7 +544,7 @@ GameObject:
   - component: {fileID: 8664000391699788652}
   - component: {fileID: 8664000391700558668}
   - component: {fileID: 8664000391701688716}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Component#1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -623,7 +623,7 @@ GameObject:
   - component: {fileID: 8664000391699788654}
   - component: {fileID: 8664000391700558670}
   - component: {fileID: 8664000391701688718}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Component#2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -706,7 +706,7 @@ GameObject:
   - component: {fileID: 5107555605718506968}
   - component: {fileID: 3607719036991239625}
   - component: {fileID: 183151826262332099}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PeaShooter
   m_TagString: Plant
   m_Icon: {fileID: 0}
@@ -824,9 +824,7 @@ MonoBehaviour:
   attack: 1
   speed: 1
   rateOfFire: 1
-  row: 0
-  column: 0
-  garden: {fileID: 0}
+  tile: {fileID: 0}
 --- !u!65 &183151826262332099
 BoxCollider:
   m_ObjectHideFlags: 0

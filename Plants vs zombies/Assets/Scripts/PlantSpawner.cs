@@ -7,12 +7,13 @@ public class PlantSpawner : MonoBehaviour
     public bool ready;
     public GameObject plant;
     public bool used;
+    bool blocked;
     private Color color;
     public Vector3 positionOffset;   
     void OnMouseEnter() {
         if (ready){
             color = GetComponent<Renderer>().material.color;
-            if (used) GetComponent<Renderer>().material.color = Color.red;
+            if (used || blocked) GetComponent<Renderer>().material.color = Color.red;
             else GetComponent<Renderer>().material.color = Color.green;
         }
     }
@@ -20,7 +21,7 @@ public class PlantSpawner : MonoBehaviour
        if (ready) GetComponent<Renderer>().material.color = color;
     }
     void OnMouseDown(){
-        if (!used && ready){
+        if (!used && ready && !blocked){
             GameObject obj = (GameObject)Instantiate(plant, transform.position+positionOffset, plant.transform.rotation);
             obj.GetComponent<ObjectStats>().tile = gameObject;
             transform.parent.parent.gameObject.GetComponent<GardenFiller>().reset = true;
@@ -33,6 +34,7 @@ public class PlantSpawner : MonoBehaviour
     void Start() {
         used = false;
         ready = false;
+        blocked = false;
         positionOffset = new Vector3(0, 0, 0);
     }
 
@@ -46,6 +48,22 @@ public class PlantSpawner : MonoBehaviour
     {
         char r = name[name.Length - 1];
         return r - '0';
+    }
+
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Zombie")
+        {
+            blocked = true;
+        }
+    }
+
+    void OnCollisionExit(Collision other)
+    {
+        if (other.gameObject.tag == "Zombie")
+        {
+            blocked = false;
+        }
     }
 
     // Update is called once per frame

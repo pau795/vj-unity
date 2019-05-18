@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Plant
   - Zombie
+  - Item
   layers:
   - Default
   - TransparentFX
@@ -16,12 +17,12 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Terrain
+  - Plants
+  - Zombies
+  - Items
+  - Bullet
+  - Mower
   - 
   - 
   - 

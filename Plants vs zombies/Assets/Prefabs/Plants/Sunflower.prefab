@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 8094591962407731196}
   - component: {fileID: 1982943023318651019}
   - component: {fileID: 6637083231864299572}
-  m_Layer: 0
+  - component: {fileID: 3903583633582649607}
+  m_Layer: 10
   m_Name: Sunflower
   m_TagString: Plant
   m_Icon: {fileID: 0}
@@ -83,9 +84,21 @@ MonoBehaviour:
   attack: 1
   speed: 1
   rateOfFire: 1
-  row: 0
-  column: 0
-  garden: {fileID: 4516147087727423457, guid: 5a285fb6f00da2649bc2de3b860e6297, type: 3}
+  tile: {fileID: 0}
+--- !u!114 &3903583633582649607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7011133827824476273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51aab35cb263cfa40a7ed63b0d1ddd6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  productionTime: 10
+  sun: {fileID: 4587332610763310693, guid: 132a6a28d7f268c48bb65322b36be42b, type: 3}
 --- !u!1 &7011133827824476277
 GameObject:
   m_ObjectHideFlags: 0
@@ -98,7 +111,7 @@ GameObject:
   - component: {fileID: 7011133827821091957}
   - component: {fileID: 7011133827822223029}
   - component: {fileID: 849005496948299500}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Group 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -199,7 +212,7 @@ GameObject:
   - component: {fileID: 7011133827824516183}
   - component: {fileID: 7011133827821091959}
   - component: {fileID: 7011133827822223031}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Group 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
