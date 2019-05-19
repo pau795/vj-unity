@@ -7,6 +7,8 @@ TagManager:
   - Plant
   - Zombie
   - Item
+  - Pea
+  - SnowPea
   layers:
   - Default
   - TransparentFX

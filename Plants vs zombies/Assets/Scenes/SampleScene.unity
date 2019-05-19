@@ -956,5 +956,10 @@ PrefabInstance:
       propertyPath: sunScore
       value: 
       objectReference: {fileID: 379858184}
+    - target: {fileID: 6608540879341163544, guid: d4c44b5b37a15654cb3527b457bdcb58,
+        type: 3}
+      propertyPath: levelData
+      value: 
+      objectReference: {fileID: 4900000, guid: 8fafc2da70a46da4c8777a0b0e574b2b, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4c44b5b37a15654cb3527b457bdcb58, type: 3}

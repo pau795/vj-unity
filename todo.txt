@@ -4,35 +4,35 @@
 		[]	1.3 - Elementos extra de la escena meramente decorativos
 		
 []  2 - Plantas
-		[]	2.1 - Modelos de las 6 plantas (2 / 6)
+		[]	2.1 - Modelos de las 6 plantas (5 / 6)
 		[x]	2.2 - Spawnear plantas 
 		[x] 2.3 - Plantas atacan
-		[]	2.4 - Plantas reciben daño
-		[]	2.5 - Plantas mueren
+		[x]	2.4 - Plantas reciben daño
+		[x]	2.5 - Plantas mueren
 		
 [] 	3 - Zombies
-		[]	3.1 - Modelos de zombies (1 / 3)
+		[]	3.1 - Modelos de zombies (2 / 3)
 		[]	3.2 - Spawnear zobmies 
-		[]	3.3 - Desplazamiento de zobmies 
-		[]	3.4 - Zombies atacan
-		[]	3.5 - Zombies reciben daño
-		[]	3.6 - Zombies mueren
+		[x]	3.3 - Desplazamiento de zobmies 
+		[x]	3.4 - Zombies atacan
+		[x]	3.5 - Zombies reciben daño
+		[x]	3.6 - Zombies mueren
 	
 [] 	4 - Mecánicas
 		[]	4.1 - Mecánica de soles
-				[]	4.1.1 - Modelo de sol
-				[]	4.1.2 - Soles generados por defecto
-				[]	4.1.3 - Soles generados por girasoles
-				[]	4.1.4 - Clickar en el sol para obtenerlo
+				[x]	4.1.1 - Modelo de sol
+				[x]	4.1.2 - Soles generados por defecto
+				[x]	4.1.3 - Soles generados por girasoles
+				[x]	4.1.4 - Clickar en el sol para obtenerlo
 				[]	4.1.5 - Utilizar soles como moneda para todo 
 
 		[]	4.2 - Mecánica de cortacesped
 				[x]	4.2.1 - Modelo de cortacesped
-				[]	4.2.2 - Spawenar cortacesped al inicio de nivel en cada fila
-				[]	4.2.3 - Activación y movimiento de cortacesped
+				[x]	4.2.2 - Spawenar cortacesped al inicio de nivel en cada fila
+				[x]	4.2.3 - Activación y movimiento de cortacesped
 		
 		[] 4.3 - Efectos especiales
-				[]	4.3.1 - Animaciones para cada acción
+				[x]	4.3.1 - Animaciones para cada acción
 				[]	4.3.2 - Sistemas de particulas para cada interacción
 				[]	4.3.3 - Audio para cada acción, y música de fondo				
 		
@@ -48,15 +48,15 @@
 []	5 - Interfaz
     []	5.1 - Menú Principal
           [x] 5.1.1 - Jugar
-          []  5.1.1 - Créditos
+          [x]  5.1.1 - Créditos
           [x] 5.1.1 - Salir
     []	5.2 - Intarfaz visible
-          []	5.2.1 - Panel con soles disponbiles
-          []	5.2.2 - Panel con todas las plantas disponibles, mostrando precio. Funcionalidad de clickar para spawnear planta. (2/6)
+          [x]	5.2.1 - Panel con soles disponbiles
+          [x]	5.2.2 - Panel con todas las plantas disponibles, mostrando precio. Funcionalidad de clickar para spawnear planta. (2/6)
           []	5.2.3 - Panel con información actual del nivel (numero de rondas, tiempo de partida)
 
     []	5.3 - Interacción con el entorno
           []	5.3.1 -	Seleccionar objeto (planta o zombie) y mostrar sus estadísticas en algún panel
           []	5.3.2 - Panel para poder las estadísticas de las plantas, pagando soles.
 
-    []	5.4 - Menu de pausa
+    [x]	5.4 - Menu de pausa

@@ -20,6 +20,7 @@ public class PeaBehaviour : MonoBehaviour
     {
         if (Input.GetKeyDown("space"))
         {
+            animator.SetFloat("rateOfFire", GetComponent<ObjectStats>().rateOfFire);
             animator.SetTrigger("attack");
         }
         
@@ -39,7 +40,8 @@ public class PeaBehaviour : MonoBehaviour
     }
 
     void shoot(){
-       Instantiate(bullet, transform.position + new Vector3(1.0f, 2.2f, 0.0f), transform.rotation);
+       GameObject g = (GameObject) Instantiate(bullet, transform.position + new Vector3(1.0f, 2.2f, 0.0f), transform.rotation);
+       g.GetComponent<ShotMovement>().attack = GetComponent<ObjectStats>().attack;
     }
    
 

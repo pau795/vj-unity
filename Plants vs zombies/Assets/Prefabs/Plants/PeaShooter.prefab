@@ -821,7 +821,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 100
   HP: 0
-  attack: 1
+  attack: 30
   speed: 1
   rateOfFire: 1
   tile: {fileID: 0}

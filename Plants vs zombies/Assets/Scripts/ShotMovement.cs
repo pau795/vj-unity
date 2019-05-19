@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class ShotMovement : MonoBehaviour
 {
+    public float speedPenalty;
     public float speed;
+    public float attack;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +21,9 @@ public class ShotMovement : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Zombie") { 
+        if (other.gameObject.tag == "Zombie") {
+            other.gameObject.GetComponent<ObjectStats>().HP -= attack;
+            if(gameObject.tag == "SnowPea") other.gameObject.GetComponent<ObjectStats>().speed *= speedPenalty;
             Destroy(gameObject);
         }
     }

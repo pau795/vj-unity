@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnowPeaBullet
       objectReference: {fileID: 0}
+    - target: {fileID: 4569634094540655404, guid: 67e7ac0f7fe546643923a66b906d3b96,
+        type: 3}
+      propertyPath: m_TagString
+      value: SnowPea
+      objectReference: {fileID: 0}
     - target: {fileID: 5834935410411655364, guid: 67e7ac0f7fe546643923a66b906d3b96,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -72,5 +77,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: fda9dea49f530aa42bbe56a267d2a781, type: 2}
+    - target: {fileID: 3135274046032890656, guid: 67e7ac0f7fe546643923a66b906d3b96,
+        type: 3}
+      propertyPath: speedPenalty
+      value: 0.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67e7ac0f7fe546643923a66b906d3b96, type: 3}

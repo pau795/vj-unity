@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\ChomperBehaviour.cs" />
+     <Compile Include="Assets\Scripts\Explosion.cs" />
      <Compile Include="Assets\Scripts\GardenFiller.cs" />
      <Compile Include="Assets\Scripts\MainMenu.cs" />
      <Compile Include="Assets\Scripts\MowerBehaviour.cs" />
@@ -62,11 +63,13 @@
      <Compile Include="Assets\Scripts\PauseMenu.cs" />
      <Compile Include="Assets\Scripts\PeaBehaviour.cs" />
      <Compile Include="Assets\Scripts\PlantSpawner.cs" />
+     <Compile Include="Assets\Scripts\PotatoMineBehaviour.cs" />
      <Compile Include="Assets\Scripts\SceneElements.cs" />
      <Compile Include="Assets\Scripts\ShotMovement.cs" />
      <Compile Include="Assets\Scripts\SunBehaviour.cs" />
      <Compile Include="Assets\Scripts\SunFlowerBehaviour.cs" />
      <Compile Include="Assets\Scripts\ZombieBehaviour.cs" />
+     <None Include="Assets\Data\Level1.txt" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>C:/Users/pau_7/Documents/GitHub/vj-unity/Plants vs zombies/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>

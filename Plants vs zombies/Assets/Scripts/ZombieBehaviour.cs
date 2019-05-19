@@ -34,12 +34,14 @@ public class ZombieBehaviour : MonoBehaviour
         AnimatorStateInfo state = animator.GetCurrentAnimatorStateInfo(0);
         if (state.fullPathHash == walkingHash)
         {
+            speed = GetComponent<ObjectStats>().speed;
             transform.position = transform.position + new Vector3(-speed * Time.deltaTime, 0.0f, 0.0f);
         }
         if (state.fullPathHash == IdleHash)
         {
             if (attacking && once)
             {
+                rateOfFire = GetComponent<ObjectStats>().rateOfFire;
                 int randomNumber = Random.Range(1, 4);
                 animator.SetTrigger("attack" + randomNumber);
                 animator.SetFloat("rateOfFire", rateOfFire);
@@ -102,6 +104,7 @@ public class ZombieBehaviour : MonoBehaviour
 
     void doDamage()
     {
+        attack = GetComponent<ObjectStats>().attack;
         target.GetComponent<ObjectStats>().HP -= attack;
         if (target.GetComponent<ObjectStats>().HP <= 0)
         {

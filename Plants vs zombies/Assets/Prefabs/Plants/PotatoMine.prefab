@@ -320,6 +320,7 @@ GameObject:
   - component: {fileID: 7033831994467071464}
   - component: {fileID: 7777814090156942879}
   - component: {fileID: 6192618166983778200}
+  - component: {fileID: 4046417407692531170}
   m_Layer: 10
   m_Name: PotatoMine
   m_TagString: Plant
@@ -392,6 +393,20 @@ MonoBehaviour:
   speed: 1
   rateOfFire: 1
   tile: {fileID: 0}
+--- !u!114 &4046417407692531170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 738661742606463512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61e21343d34ef5b44aab568235549220, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 1662124544343373672, guid: bfd57d587e6008447a504413b3fdfe24,
+    type: 3}
 --- !u!1 &738661742606463516
 GameObject:
   m_ObjectHideFlags: 0
