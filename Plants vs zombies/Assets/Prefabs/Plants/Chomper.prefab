@@ -192,7 +192,7 @@ Transform:
   - {fileID: 2498223064262930864}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: -90, y: -90, z: 180}
 --- !u!95 &8357994468422751855
 Animator:
   serializedVersion: 3
@@ -223,7 +223,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 20, y: 45, z: 33}
+  m_Size: {x: 20, y: 35, z: 33}
   m_Center: {x: -5, y: -18, z: 16.5}
 --- !u!114 &2082190480757315434
 MonoBehaviour:
@@ -239,7 +239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 100
   HP: 0
-  attack: 1
+  attack: 50
   speed: 1
   rateOfFire: 1
   tile: {fileID: 0}
@@ -255,6 +255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03e091dea43cfe747a095c4a22f8c242, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet: {fileID: 5270276954463513653, guid: 82057091fd791234db068112084ed3a2, type: 3}
 --- !u!1 &2498223064262897046
 GameObject:
   m_ObjectHideFlags: 0

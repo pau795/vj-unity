@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\ChomperBehaviour.cs" />
+     <Compile Include="Assets\Scripts\ChomperDamage.cs" />
      <Compile Include="Assets\Scripts\Explosion.cs" />
      <Compile Include="Assets\Scripts\GardenFiller.cs" />
      <Compile Include="Assets\Scripts\MainMenu.cs" />
@@ -68,6 +69,7 @@
      <Compile Include="Assets\Scripts\ShotMovement.cs" />
      <Compile Include="Assets\Scripts\SunBehaviour.cs" />
      <Compile Include="Assets\Scripts\SunFlowerBehaviour.cs" />
+     <Compile Include="Assets\Scripts\WallnutBehaviour.cs" />
      <Compile Include="Assets\Scripts\ZombieBehaviour.cs" />
      <None Include="Assets\Data\Level1.txt" />
  <Reference Include="Unity.TextMeshPro.Editor">

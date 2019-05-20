@@ -10,6 +10,7 @@ public class GardenFiller : MonoBehaviour
     public GameObject snowPea;
     public GameObject potatoMine;
     public GameObject chomper;
+    public GameObject wallNut;
     // Start is called before the first frame update
     void Start()
     {
@@ -78,6 +79,23 @@ public class GardenFiller : MonoBehaviour
                 tile.GetComponent<PlantSpawner>().ready = true;
                 tile.GetComponent<PlantSpawner>().plant = chomper;
                 Vector3 v = new Vector3(-2.0f, 0.0f, -0.5f);
+                tile.GetComponent<PlantSpawner>().positionOffset = v;
+            }
+        }
+
+    }
+
+    public void selectWallNut()
+    {
+        for (int i = 0; i < transform.childCount; ++i)
+        {
+            Transform row = transform.GetChild(i);
+            for (int j = 0; j < row.childCount; ++j)
+            {
+                GameObject tile = row.GetChild(j).gameObject;
+                tile.GetComponent<PlantSpawner>().ready = true;
+                tile.GetComponent<PlantSpawner>().plant = wallNut;
+                Vector3 v = new Vector3(-1.0f, 0.0f, 0.5f);
                 tile.GetComponent<PlantSpawner>().positionOffset = v;
             }
         }

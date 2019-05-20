@@ -780,7 +780,7 @@ PrefabInstance:
     - target: {fileID: 107731550133993298, guid: abb019e6b04242643817a8ab745fd204,
         type: 3}
       propertyPath: m_Name
-      value: ButtonWhatever
+      value: ButtonWallNut
       objectReference: {fileID: 0}
     - target: {fileID: 107731550457542945, guid: abb019e6b04242643817a8ab745fd204,
         type: 3}
@@ -866,7 +866,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Texture
       value: 
-      objectReference: {fileID: 2800000, guid: e2c83a1c20e5a9e4e85cdabc0fe3862a, type: 3}
+      objectReference: {fileID: 2800000, guid: 10ee51bfd0affce4d83ed55f8a00a629, type: 3}
     - target: {fileID: 107731551256377186, guid: abb019e6b04242643817a8ab745fd204,
         type: 3}
       propertyPath: m_Texture
@@ -881,6 +881,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 107731550133993295, guid: abb019e6b04242643817a8ab745fd204,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1397054986}
+    - target: {fileID: 107731550133993295, guid: abb019e6b04242643817a8ab745fd204,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: selectWallNut
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abb019e6b04242643817a8ab745fd204, type: 3}
@@ -951,6 +961,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4397970847443775160, guid: d4c44b5b37a15654cb3527b457bdcb58,
+        type: 3}
+      propertyPath: wallNut
+      value: 
+      objectReference: {fileID: 7623673458551015551, guid: c2f0ca72d0a1be043a83b8972d33a5af,
+        type: 3}
     - target: {fileID: 6608540879341163544, guid: d4c44b5b37a15654cb3527b457bdcb58,
         type: 3}
       propertyPath: sunScore
