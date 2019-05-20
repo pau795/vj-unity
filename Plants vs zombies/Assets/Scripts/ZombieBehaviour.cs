@@ -76,6 +76,8 @@ public class ZombieBehaviour : MonoBehaviour
     void disappear()
     {
         StartCoroutine("fadeOut");
+        SceneElements sc = transform.parent.gameObject.GetComponent<SceneElements>();
+        sc.zombieDead();
     }
 
     IEnumerator fadeOut()

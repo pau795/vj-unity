@@ -50,25 +50,16 @@ public class PlantSpawner : MonoBehaviour
         return r - '0';
     }
 
-    void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.tag == "Zombie")
-        {
-            blocked = true;
-        }
-    }
-
-    void OnCollisionExit(Collision other)
-    {
-        if (other.gameObject.tag == "Zombie")
-        {
-            blocked = false;
-        }
-    }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (Physics.Raycast(transform.position - new Vector3(2.5f, -3.0f,0.0f), transform.right, 5)){
+            blocked = true;
+        }
+        else
+        {
+            blocked = false;
+        }
     }
 }
