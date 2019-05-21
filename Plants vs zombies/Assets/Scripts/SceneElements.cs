@@ -157,7 +157,8 @@ public class SceneElements : MonoBehaviour
                 for (int zn = 0; zn < num; ++zn)
                 {
                     int row = Random.Range(0, 5);
-                    GameObject zombie1 = (GameObject) Instantiate(zombie, transform.position + new Vector3(35.0f, -0.15f, (float)(row * 5)), zombie.transform.rotation);
+                    int d = Random.Range(0, 5);
+                    GameObject zombie1 = (GameObject) Instantiate(zombie, transform.position + new Vector3((float)30+d, -0.15f, (float)(row * 5)), zombie.transform.rotation);
                     zombie1.transform.parent = transform;
                     yield return new WaitForSeconds(1.5f);
                 }
