@@ -12,7 +12,7 @@
 		
 [] 	3 - Zombies
 		[]	3.1 - Modelos de zombies (2 / 3)
-		[]	3.2 - Spawnear zobmies 
+		[x]	3.2 - Spawnear zobmies 
 		[x]	3.3 - Desplazamiento de zobmies 
 		[x]	3.4 - Zombies atacan
 		[x]	3.5 - Zombies reciben daño
@@ -26,7 +26,7 @@
 				[x]	4.1.4 - Clickar en el sol para obtenerlo
 				[]	4.1.5 - Utilizar soles como moneda para todo 
 
-		[]	4.2 - Mecánica de cortacesped
+		[x]	4.2 - Mecánica de cortacesped
 				[x]	4.2.1 - Modelo de cortacesped
 				[x]	4.2.2 - Spawenar cortacesped al inicio de nivel en cada fila
 				[x]	4.2.3 - Activación y movimiento de cortacesped
@@ -37,11 +37,11 @@
 				[]	4.3.3 - Audio para cada acción, y música de fondo				
 		
 		[]	4.4 - Niveles
-				[]	4.4.1 - Niveles estandard (0/3)
+				[]	4.4.1 - Niveles estandard (1/3)
 				[]	4.4.1 - Niveles especiales, con alguna mecánica diferente (0/3)
 		
 		[]	4.5 - Mecánica de hordas
-				[]	4.5.1 - Establecer numero de rondas, numero de zombies, tipos de zombies, tiempos de spawneo para cada nivel
+				[x]	4.5.1 - Establecer numero de rondas, numero de zombies, tipos de zombies
 			
 		[]	4.6 - Mecánica para niveles espciales (aún por determinar)
 		
