@@ -27,6 +27,7 @@ public class MowerBehaviour : MonoBehaviour
         {
             if (!move)
             {
+                GetComponent<ParticleSystem>().Play();
                 transform.position = transform.position + (transform.forward*2);
                 move = true;
             }

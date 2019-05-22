@@ -64,6 +64,7 @@ public class ZombieBehaviour : MonoBehaviour
             target = other.gameObject;
             attacking = true;
         }
+
     }
 
     public void die()
@@ -76,6 +77,8 @@ public class ZombieBehaviour : MonoBehaviour
     void disappear()
     {
         StartCoroutine("fadeOut");
+        SceneElements sc = transform.parent.gameObject.GetComponent<SceneElements>();
+        sc.zombieDead();
     }
 
     IEnumerator fadeOut()
@@ -104,14 +107,17 @@ public class ZombieBehaviour : MonoBehaviour
 
     void doDamage()
     {
-        attack = GetComponent<ObjectStats>().attack;
-        target.GetComponent<ObjectStats>().HP -= attack;
-        if (target.GetComponent<ObjectStats>().HP <= 0)
+        if (target != null)
         {
-            attacking = false;
-            target.GetComponent<ObjectStats>().HP = 0;
+            attack = GetComponent<ObjectStats>().attack;
+            target.GetComponent<ObjectStats>().HP -= attack;
+            if (target.GetComponent<ObjectStats>().HP <= 0)
+            {
+                attacking = false;
+                target.GetComponent<ObjectStats>().HP = 0;
+            }
+            once = true;
         }
-        once = true;
 
     }
 }

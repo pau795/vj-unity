@@ -46,14 +46,14 @@
 		[]	4.6 - Mecánica para niveles espciales (aún por determinar)
 		
 []	5 - Interfaz
-    []	5.1 - Menú Principal
+    [x]	5.1 - Menú Principal
           [x] 5.1.1 - Jugar
           [x]  5.1.1 - Créditos
           [x] 5.1.1 - Salir
-    []	5.2 - Intarfaz visible
+    [x]	5.2 - Intarfaz visible
           [x]	5.2.1 - Panel con soles disponbiles
           [x]	5.2.2 - Panel con todas las plantas disponibles, mostrando precio. Funcionalidad de clickar para spawnear planta. (2/6)
-          []	5.2.3 - Panel con información actual del nivel (numero de rondas, tiempo de partida)
+          [x]	5.2.3 - Panel con información actual del nivel (numero de rondas, tiempo de partida)
 
     []	5.3 - Interacción con el entorno
           []	5.3.1 -	Seleccionar objeto (planta o zombie) y mostrar sus estadísticas en algún panel

@@ -18,11 +18,14 @@ public class PeaBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("space"))
+        int layermask = LayerMask.GetMask("Zombies");
+        if (Physics.Raycast(transform.position + new Vector3(0, 3, 0), transform.right, 20, layermask))
         {
+            //Debug.DrawRay(transform.position + new Vector3(0, 3, 0), transform.right * 20, Color.yellow);
             animator.SetFloat("rateOfFire", GetComponent<ObjectStats>().rateOfFire);
             animator.SetTrigger("attack");
         }
+        //else { Debug.DrawRay(transform.position + new Vector3(0, 3, 0), transform.right * 25, Color.green); }
         
     }
 

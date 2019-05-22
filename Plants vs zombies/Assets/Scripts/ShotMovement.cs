@@ -22,6 +22,7 @@ public class ShotMovement : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Zombie") {
+            Physics.IgnoreCollision(other.GetComponent<Collider>(), GetComponent<Collider>());
             other.gameObject.GetComponent<ObjectStats>().HP -= attack;
             if(gameObject.tag == "SnowPea") other.gameObject.GetComponent<ObjectStats>().speed *= speedPenalty;
             Destroy(gameObject);
