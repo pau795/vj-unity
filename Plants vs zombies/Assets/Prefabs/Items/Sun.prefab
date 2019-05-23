@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4587332610763310692}
   - component: {fileID: 4311420327503709945}
   - component: {fileID: 466433136140409159}
-  m_Layer: 12
+  m_Layer: 15
   m_Name: Sun
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -134,4 +134,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2301456b712ed246a776a209d6628d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  s: {fileID: 6608540879341163544, guid: d4c44b5b37a15654cb3527b457bdcb58, type: 3}
+  pso: {fileID: 8087635694706824242, guid: e053978177307994990bd7f8831d7840, type: 3}

@@ -7,6 +7,7 @@ public class ShotMovement : MonoBehaviour
     public float speedPenalty;
     public float speed;
     public float attack;
+    public GameObject pso;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,7 @@ public class ShotMovement : MonoBehaviour
     {
         if (other.gameObject.tag == "Zombie") {
             Physics.IgnoreCollision(other.GetComponent<Collider>(), GetComponent<Collider>());
+            Instantiate(pso, transform.position, pso.transform.rotation);
             other.gameObject.GetComponent<ObjectStats>().HP -= attack;
             if(gameObject.tag == "SnowPea") other.gameObject.GetComponent<ObjectStats>().speed *= speedPenalty;
             Destroy(gameObject);

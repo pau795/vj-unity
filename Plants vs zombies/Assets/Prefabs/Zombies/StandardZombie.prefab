@@ -846,6 +846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b41291fdbc16f84086f948018924892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnPS: {fileID: 6980218231940755927, guid: d448d94d410931240a9401d67f5a02fb, type: 3}
 --- !u!114 &3824620966927860503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -861,7 +862,7 @@ MonoBehaviour:
   maxHP: 100
   HP: 0
   attack: 75
-  speed: 5
+  speed: 1
   rateOfFire: 1
   tile: {fileID: 0}
 --- !u!1 &2917558242606716978

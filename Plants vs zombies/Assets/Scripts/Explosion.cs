@@ -30,7 +30,7 @@ public class Explosion : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == 11)
         {

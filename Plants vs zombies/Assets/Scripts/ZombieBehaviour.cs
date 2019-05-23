@@ -8,6 +8,8 @@ public class ZombieBehaviour : MonoBehaviour
     Animator animator;
     SkinnedMeshRenderer rend;
 
+    public GameObject spawnPS;
+
     int walkingHash = Animator.StringToHash("Base Layer.Zombie Walking");
     int IdleHash = Animator.StringToHash("Base Layer.Zombie Idle");
 
@@ -18,6 +20,7 @@ public class ZombieBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Instantiate(spawnPS, transform.position - new Vector3(0f, -0.8f, 0f), spawnPS.transform.rotation);
         speed = GetComponent<ObjectStats>().speed;
         attack = GetComponent<ObjectStats>().attack;
         rateOfFire = GetComponent<ObjectStats>().rateOfFire;
@@ -60,6 +63,20 @@ public class ZombieBehaviour : MonoBehaviour
     {
         if (once && other.gameObject.layer == 10)
         {
+            Physics.IgnoreCollision(other.gameObject.GetComponent<Collider>(), GetComponent<Collider>());
+            animator.SetTrigger("stand");
+            target = other.gameObject;
+            attacking = true;
+        }
+
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+
+        if (once && other.gameObject.layer == 10)
+        {
+            Physics.IgnoreCollision(other, GetComponent<Collider>());
             animator.SetTrigger("stand");
             target = other.gameObject;
             attacking = true;

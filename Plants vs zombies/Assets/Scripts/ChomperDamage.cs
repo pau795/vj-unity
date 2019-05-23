@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ChomperDamage : MonoBehaviour
 {
+    public GameObject pso;
     public float attack;
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,7 @@ public class ChomperDamage : MonoBehaviour
     {
         if (other.gameObject.layer == 11)
         {
+            Instantiate(pso, transform.position, pso.transform.rotation);
             Physics.IgnoreCollision(other, GetComponent<Collider>());
             other.gameObject.GetComponent<ObjectStats>().HP -= attack;
         }

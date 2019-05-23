@@ -44,7 +44,7 @@ public class SceneElements : MonoBehaviour
             rounds = new Round[n];
         }
 
-        public void setRound (int i, Round r) { rounds[i] = r; }
+        public void setRound(int i, Round r) { rounds[i] = r; }
     }
 
     public class Round
@@ -53,8 +53,8 @@ public class SceneElements : MonoBehaviour
         public int difEnemies;
         int[] numEnemies;
         int[] enemyType;
-        public int enemyAmount(int i) {return numEnemies[i];}
-        public int enemyKind(int i) {return enemyType[i];}
+        public int enemyAmount(int i) { return numEnemies[i]; }
+        public int enemyKind(int i) { return enemyType[i]; }
         public void setDifEnemies(int n)
         {
             difEnemies = n;
@@ -73,15 +73,16 @@ public class SceneElements : MonoBehaviour
     void Start()
     {
         updateSunScore();
-        for (int i=0; i<5; ++i){
-            Instantiate(mower, transform.position + new Vector3(-5, 0, i*5), mower.transform.rotation);
+        for (int i = 0; i < 5; ++i)
+        {
+            Instantiate(mower, transform.position + new Vector3(-6.5f, 0f,(float) i * 5), mower.transform.rotation);
         }
         Instantiate(fence, transform.position + new Vector3(4.5f, 0.0f, 24.0f), fence.transform.rotation);
         InvokeRepeating("generateSuns", 1.0f, 1.0f);
         loadLevel(0);
         StartCoroutine("zombieSpawn");
     }
-    
+
     public void updateSunScore()
     {
         sunScore.text = sunCount.ToString();
@@ -89,7 +90,7 @@ public class SceneElements : MonoBehaviour
 
     void generateSuns()
     {
-        int randomNumber = Random.Range(0, 100/sunSpawnChance);
+        int randomNumber = Random.Range(0, 100 / sunSpawnChance);
         if (randomNumber == 0)
         {
             int x = Random.Range(0, 20);
@@ -101,7 +102,8 @@ public class SceneElements : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (change) {
+        if (change)
+        {
             updateSunScore();
             change = false;
         }
@@ -113,19 +115,19 @@ public class SceneElements : MonoBehaviour
     void loadLevel(int lvl)
     {
         level = new Level();
-        level.numLvl = lvl+1;
+        level.numLvl = lvl + 1;
         string[] lines = levelData.text.Split('\n');
-        for (int i1 = 0; i1< lines.Length; ++i1)
+        for (int i1 = 0; i1 < lines.Length; ++i1)
         {
             if (i1 == lvl)
             {
                 string l = lines[i1];
                 string[] rounds = l.Split(',');
-                level.setNumRounds(rounds.Length-1);
-                for (int i = 0; i < rounds.Length-1; ++i)
+                level.setNumRounds(rounds.Length - 1);
+                for (int i = 0; i < rounds.Length - 1; ++i)
                 {
                     string s = rounds[i];
-                    s = s.Substring(1, s.Length -2);
+                    s = s.Substring(1, s.Length - 2);
                     Round r = new Round();
                     int totalE = 0;
                     string[] p = s.Split(' ');
@@ -176,13 +178,13 @@ public class SceneElements : MonoBehaviour
                 {
                     int row = Random.Range(0, 5);
                     int d = Random.Range(0, 5);
-                    GameObject zombie1 = (GameObject) Instantiate(zombie, transform.position + new Vector3((float)30+d, -0.15f, (float)(row * 5)), zombie.transform.rotation);
+                    GameObject zombie1 = (GameObject)Instantiate(zombie, transform.position + new Vector3((float)30 + d, -0.15f, (float)(row * 5)), zombie.transform.rotation);
                     zombie1.transform.parent = transform;
                     yield return new WaitForSeconds(1.5f);
                 }
             }
             yield return new WaitUntil(() => remainingZombies == 0);
-            
+
         }
     }
 }

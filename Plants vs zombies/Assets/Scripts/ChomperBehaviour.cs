@@ -32,11 +32,11 @@ public class ChomperBehaviour : MonoBehaviour
         animator.SetTrigger("dead");
     }
 
-    public void OnCollisionEnter(Collision other)
+    public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == 11)
         {
-            Physics.IgnoreCollision(other.collider, GetComponent<Collider>());
+            Physics.IgnoreCollision(other, GetComponent<Collider>());
         }
     }
 
