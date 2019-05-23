@@ -14,6 +14,7 @@ public class ZombieBehaviour : MonoBehaviour
     int IdleHash = Animator.StringToHash("Base Layer.Zombie Idle");
 
     private GameObject target;
+    bool dead;
     bool attacking;
     bool once;
 
@@ -28,7 +29,7 @@ public class ZombieBehaviour : MonoBehaviour
         rend = transform.GetChild(1).gameObject.GetComponent<SkinnedMeshRenderer>();
         attacking = false;
         once = true;
-
+        dead = false;
     }
 
     // Update is called once per frame
@@ -42,7 +43,7 @@ public class ZombieBehaviour : MonoBehaviour
         }
         if (state.fullPathHash == IdleHash)
         {
-            if (attacking && once)
+            if (!dead && attacking && once)
             {
                 rateOfFire = GetComponent<ObjectStats>().rateOfFire;
                 int randomNumber = Random.Range(1, 4);
@@ -61,7 +62,7 @@ public class ZombieBehaviour : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        if (once && other.gameObject.layer == 10)
+        if (!dead && once && other.gameObject.layer == 10)
         {
             Physics.IgnoreCollision(other.gameObject.GetComponent<Collider>(), GetComponent<Collider>());
             animator.SetTrigger("stand");
@@ -74,7 +75,7 @@ public class ZombieBehaviour : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
 
-        if (once && other.gameObject.layer == 10)
+        if (!dead && once && other.gameObject.layer == 10)
         {
             Physics.IgnoreCollision(other, GetComponent<Collider>());
             animator.SetTrigger("stand");
@@ -87,6 +88,7 @@ public class ZombieBehaviour : MonoBehaviour
     public void die()
     {
         speed = 0;
+        dead = true;
         GetComponent<Collider>().enabled = false;
         animator.SetTrigger("dead");
     }

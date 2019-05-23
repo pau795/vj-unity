@@ -70,6 +70,7 @@
      <Compile Include="Assets\Scripts\ShotMovement.cs" />
      <Compile Include="Assets\Scripts\SunBehaviour.cs" />
      <Compile Include="Assets\Scripts\SunFlowerBehaviour.cs" />
+     <Compile Include="Assets\Scripts\TimerScript.cs" />
      <Compile Include="Assets\Scripts\WallnutBehaviour.cs" />
      <Compile Include="Assets\Scripts\ZombieBehaviour.cs" />
      <None Include="Assets\Data\Level1.txt" />
