@@ -156,6 +156,11 @@ PrefabInstance:
       propertyPath: rateOfFire
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3607719036991239625, guid: 7d684eed8ec832a4d927bf8b0ed0d068,
+        type: 3}
+      propertyPath: displayText
+      value: 
+      objectReference: {fileID: 3716914750530004385}
     - target: {fileID: 8664000391699788642, guid: 7d684eed8ec832a4d927bf8b0ed0d068,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -220,3 +225,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8872377331838608510}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3716914750530004385 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5238854499702391263, guid: 7d684eed8ec832a4d927bf8b0ed0d068,
+    type: 3}
+  m_PrefabInstance: {fileID: 8872377331838608510}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

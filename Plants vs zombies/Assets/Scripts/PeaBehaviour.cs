@@ -25,8 +25,7 @@ public class PeaBehaviour : MonoBehaviour
             animator.SetFloat("rateOfFire", GetComponent<ObjectStats>().rateOfFire);
             animator.SetTrigger("attack");
         }
-        //else { Debug.DrawRay(transform.position + new Vector3(0, 3, 0), transform.right * 25, Color.green); }
-        
+        //else { Debug.DrawRay(transform.position + new Vector3(0, 3, 0), transform.right * 25, Color.green);         
     }
 
     public void die()
