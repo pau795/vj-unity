@@ -1002,6 +1002,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b41291fdbc16f84086f948018924892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageText: {fileID: 2536356172430491877, guid: bd02db7eeac13814489a85f60e5e4520,
+    type: 3}
   spawnPS: {fileID: 6980218231940755927, guid: d448d94d410931240a9401d67f5a02fb, type: 3}
 --- !u!114 &3824620966927860503
 MonoBehaviour:
@@ -1017,9 +1019,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 100
   HP: 0
-  attack: 75
+  attack: 30
   speed: 1
   rateOfFire: 1
+  frozen: 0
   displayText: {fileID: 103588553533155450}
   displayText2: {fileID: 745797741563040033}
   displayText3: {fileID: 1116126729311433141}

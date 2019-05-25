@@ -160,7 +160,7 @@ PrefabInstance:
         type: 3}
       propertyPath: displayText
       value: 
-      objectReference: {fileID: 3716914750530004385}
+      objectReference: {fileID: 6797591838831440981}
     - target: {fileID: 8664000391699788642, guid: 7d684eed8ec832a4d927bf8b0ed0d068,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -225,9 +225,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8872377331838608510}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3716914750530004385 stripped
+--- !u!114 &6797591838831440981 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5238854499702391263, guid: 7d684eed8ec832a4d927bf8b0ed0d068,
+  m_CorrespondingSourceObject: {fileID: 2699030496684511275, guid: 7d684eed8ec832a4d927bf8b0ed0d068,
     type: 3}
   m_PrefabInstance: {fileID: 8872377331838608510}
   m_PrefabAsset: {fileID: 0}

@@ -9,7 +9,8 @@ public class PlantSpawner : MonoBehaviour
     public bool used;
     bool blocked;
     private Color color;
-    public Vector3 positionOffset;   
+    public Vector3 positionOffset;
+    public int sunCost;
     void OnMouseEnter() {
         if (ready){
             color = GetComponent<Renderer>().material.color;
@@ -24,6 +25,8 @@ public class PlantSpawner : MonoBehaviour
         if (!used && ready && !blocked){
             GameObject obj = (GameObject)Instantiate(plant, transform.position+positionOffset, plant.transform.rotation);
             obj.GetComponent<ObjectStats>().tile = gameObject;
+            SceneElements.sunCount -= sunCost;
+            SceneElements.change = true;
             transform.parent.parent.gameObject.GetComponent<GardenFiller>().reset = true;
             GetComponent<Renderer>().material.color = color;
             used = true;

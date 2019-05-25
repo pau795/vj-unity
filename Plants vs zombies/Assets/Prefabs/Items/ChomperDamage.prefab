@@ -104,5 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5e2ed0f11de85846969032a942cc181, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageText: {fileID: 2536356172430491877, guid: fb256c4f758a07747a3bc47d6c3f4881,
+    type: 3}
   pso: {fileID: 3909857440603483117, guid: 8c6be47bdbe8d9441a772900c073ffd3, type: 3}
   attack: 0

@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class ObjectStats : MonoBehaviour
 {
     public float maxHP, HP, attack, speed, rateOfFire;
+    public bool frozen;
     public Text displayText;
     public Text displayText2;
     public Text displayText3;
@@ -21,6 +22,7 @@ public class ObjectStats : MonoBehaviour
     void Start()
     {
         HP = maxHP;
+        frozen = false;
         dead = false;
         xx = true;
         xx2 = true;
@@ -32,16 +34,52 @@ public class ObjectStats : MonoBehaviour
     }
 
 
-
     // Update is called once per frame
     void Update()
     {
         if (HP <= 0 && !dead)
         {
+            if (gameObject.layer == 11) SoundManager.PlaySound("zombieDeath");
+            else if (gameObject.layer == 10) SoundManager.PlaySound("falling");
             GetComponent<Collider>().enabled = false;
             GetComponent<Animator>().SetTrigger("dead");
             dead = true;
         }
+        overlayCheck();
+    }
+
+    public void updateOverlay()
+    {
+        /*if (xx)
+        {
+            xx = false;
+            displayText.gameObject.SetActive(true);
+            displayText2.gameObject.SetActive(true);
+            displayText3.gameObject.SetActive(true);
+            displayText4.gameObject.SetActive(true);
+            displayRawImage.gameObject.SetActive(true);
+            displayText.text = "Vida: " + HP.ToString() + "/" + maxHP.ToString();
+            displayText2.text = "Ataque: " + attack.ToString();
+            displayText3.text = "Velocidad: " + speed.ToString();
+            displayText4.text = "Cadencia de ataque: " + rateOfFire.ToString();
+        }
+        if (xx2)
+        {
+            xx2 = false;
+            displayText.gameObject.SetActive(true);
+            displayText2.gameObject.SetActive(true);
+            displayText3.gameObject.SetActive(true);
+            displayText4.gameObject.SetActive(true);
+            displayRawImage.gameObject.SetActive(true);
+            displayText.text = "Vida: " + HP.ToString() + "/" + maxHP.ToString();
+            displayText2.text = "Ataque: " + attack.ToString();
+            displayText3.text = "Velocidad: " + speed.ToString();
+            displayText4.text = "Cadencia de ataque: " + rateOfFire.ToString();
+        }*/
+    }
+
+    public void overlayCheck()
+    {
         if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
         {
             int layermask2 = LayerMask.GetMask("Plants");
@@ -60,10 +98,10 @@ public class ObjectStats : MonoBehaviour
                         displayText3.gameObject.SetActive(true);
                         displayText4.gameObject.SetActive(true);
                         displayRawImage.gameObject.SetActive(true);
-                        displayText.text = "Vida:" + HP.ToString() + "/" + maxHP.ToString();
-                        displayText2.text = "Daño:" + attack.ToString();
-                        displayText3.text = "Velocidad de ataque:" + speed.ToString();
-                        displayText4.text = "Cadencia de ataque:" + rateOfFire.ToString();
+                        displayText.text = "Vida: " + HP.ToString() + "/" + maxHP.ToString();
+                        displayText2.text = "Ataque: " + attack.ToString();
+                        displayText3.text = "Velocidad: " + speed.ToString();
+                        displayText4.text = "Cadencia de ataque: " + rateOfFire.ToString();
                     }
                     else if (!xx)
                     {
@@ -73,10 +111,10 @@ public class ObjectStats : MonoBehaviour
                         displayText3.gameObject.SetActive(false);
                         displayText4.gameObject.SetActive(false);
                         displayRawImage.gameObject.SetActive(false);
-                        displayText.text = "Vida:" + HP.ToString() + "/" + maxHP.ToString();
-                        displayText2.text = "Daño:" + attack.ToString();
-                        displayText3.text = "Velocidad de ataque:" + speed.ToString();
-                        displayText4.text = "Cadencia de ataque:" + rateOfFire.ToString();
+                        displayText.text = "Vida: " + HP.ToString() + "/" + maxHP.ToString();
+                        displayText2.text = "Ataque: " + attack.ToString();
+                        displayText3.text = "Velocidad: " + speed.ToString();
+                        displayText4.text = "Cadencia de ataque: " + rateOfFire.ToString();
                     }
                 }
             }
@@ -92,10 +130,10 @@ public class ObjectStats : MonoBehaviour
                         displayText3.gameObject.SetActive(true);
                         displayText4.gameObject.SetActive(true);
                         displayRawImage.gameObject.SetActive(true);
-                        displayText.text = "Vida:" + HP.ToString() + "/" + maxHP.ToString();
-                        displayText2.text = "Daño:" + attack.ToString();
-                        displayText3.text = "Velocidad de ataque:" + speed.ToString();
-                        displayText4.text = "Cadencia de ataque:" + rateOfFire.ToString();
+                        displayText.text = "Vida: " + HP.ToString() + "/" + maxHP.ToString();
+                        displayText2.text = "Ataque: " + attack.ToString();
+                        displayText3.text = "Velocidad: " + speed.ToString();
+                        displayText4.text = "Cadencia de ataque: " + rateOfFire.ToString();
                     }
                     else if (!xx2)
                     {
@@ -105,10 +143,10 @@ public class ObjectStats : MonoBehaviour
                         displayText3.gameObject.SetActive(false);
                         displayText4.gameObject.SetActive(false);
                         displayRawImage.gameObject.SetActive(false);
-                        displayText.text = "Vida:" + HP.ToString() + "/" + maxHP.ToString();
-                        displayText2.text = "Daño:" + attack.ToString();
-                        displayText3.text = "Velocidad de ataque:" + speed.ToString();
-                        displayText4.text = "Cadencia de ataque:" + rateOfFire.ToString();
+                        displayText.text = "Vida: " + HP.ToString() + "/" + maxHP.ToString();
+                        displayText2.text = "Ataque: " + attack.ToString();
+                        displayText3.text = "Velocidad: " + speed.ToString();
+                        displayText4.text = "Cadencia de ataque: " + rateOfFire.ToString();
                     }
                 }
             }

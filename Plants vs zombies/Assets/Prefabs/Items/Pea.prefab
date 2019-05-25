@@ -123,6 +123,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdc13ec39577fbb4ea04e4a38743a65b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageText: {fileID: 2536356172430491877, guid: fb256c4f758a07747a3bc47d6c3f4881,
+    type: 3}
   speedPenalty: 1
   speed: 15
   attack: 0

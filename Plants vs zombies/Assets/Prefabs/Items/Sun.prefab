@@ -134,4 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2301456b712ed246a776a209d6628d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sunClickText: {fileID: 2536356172430491877, guid: 082301aae9b09674fad1c56da0cbb426,
+    type: 3}
   pso: {fileID: 8087635694706824242, guid: e053978177307994990bd7f8831d7840, type: 3}
+  sunProfit: 25

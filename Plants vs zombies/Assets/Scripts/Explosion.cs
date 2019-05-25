@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class Explosion : MonoBehaviour
 {
-    ParticleSystem expl;
+    public GameObject damageText;
+    public GameObject expl;
     float radius;
     float inc;
     // Start is called before the first frame update
     void Start()
     {
+        SoundManager.PlaySound("explosion");
         radius = 0.1f;
         inc = 0.15f;
-        expl = GetComponent<ParticleSystem>();
-        expl.Play();
-        Destroy(expl, expl.main.duration);
+        Instantiate(expl, transform.position, expl.transform.rotation);
     }
 
     // Update is called once per frame
@@ -35,6 +35,9 @@ public class Explosion : MonoBehaviour
         if (other.gameObject.layer == 11)
         {
             other.gameObject.GetComponent<ZombieBehaviour>().die();
+            GameObject dt = (GameObject)Instantiate(damageText, other.gameObject.transform.position, damageText.transform.rotation);
+            dt.GetComponent<TextMesh>().text = other.gameObject.GetComponent<ObjectStats>().maxHP.ToString();
+            other.gameObject.GetComponent<ObjectStats>().updateOverlay();
         }
     }
 }

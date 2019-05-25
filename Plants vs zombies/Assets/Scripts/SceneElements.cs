@@ -17,16 +17,23 @@ public class SceneElements : MonoBehaviour
     public GameObject standardZombie;
     public GameObject bucketZombie;
 
-    public static int sunCount;
+    public static int sunCount = 200;
     public static bool change = false;
+
+    static int zombiesOut = 0;
+    static int maxZombiesOut = 5;
 
     public Text sunScore;
 
+    public GameObject winMenu, loseMenu;
+
     public TextAsset levelData;
 
-    public int remainingZombies;
+    public static int remainingZombies;
     public int actualRound;
     public float killed = 0;
+    public static bool win = false;
+    public static bool lose = false;
 
     Level level;
 
@@ -69,6 +76,12 @@ public class SceneElements : MonoBehaviour
 
     }
 
+    public static void zombieOut() {
+        ++zombiesOut;
+        print(zombiesOut);
+        if (zombiesOut == maxZombiesOut) lose = true;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -78,6 +91,8 @@ public class SceneElements : MonoBehaviour
             Instantiate(mower, transform.position + new Vector3(-6.5f, 0f,(float) i * 5), mower.transform.rotation);
         }
         Instantiate(fence, transform.position + new Vector3(4.5f, 0.0f, 24.0f), fence.transform.rotation);
+        Instantiate(fence, transform.position + new Vector3(-26.5f, 0.0f, 24.0f), fence.transform.rotation);
+        Instantiate(fence, transform.position + new Vector3(34.5f, 0.0f, 24.0f), fence.transform.rotation);
         InvokeRepeating("generateSuns", 1.0f, 1.0f);
         loadLevel(0);
         StartCoroutine("zombieSpawn");
@@ -102,6 +117,17 @@ public class SceneElements : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (lose)
+        {
+            Time.timeScale = 0f;
+            loseMenu.SetActive(true);
+        }
+        if (win)
+        {
+            Time.timeScale = 0f;
+            winMenu.SetActive(true);
+        }
+
         if (change)
         {
             updateSunScore();
@@ -163,6 +189,7 @@ public class SceneElements : MonoBehaviour
         int n = level.numRounds;
         for (int i = 0; i < n; ++i)
         {
+            yield return new WaitForSeconds(10.0f);
             Round r = level.getRound(i);
             actualRound = i + 1;
             remainingZombies = r.totalEnemies;
@@ -180,11 +207,12 @@ public class SceneElements : MonoBehaviour
                     int d = Random.Range(0, 5);
                     GameObject zombie1 = (GameObject)Instantiate(zombie, transform.position + new Vector3((float)30 + d, -0.15f, (float)(row * 5)), zombie.transform.rotation);
                     zombie1.transform.parent = transform;
-                    yield return new WaitForSeconds(1.5f);
+                    yield return new WaitForSeconds(2.0f);
                 }
             }
             yield return new WaitUntil(() => remainingZombies == 0);
 
         }
+        win = true;
     }
 }

@@ -6,10 +6,12 @@ public class MowerBehaviour : MonoBehaviour
 {
     bool move;
     public float speed;
+    public AudioSource src;
     // Start is called before the first frame update
     void Start()
     {
         move = false;
+        src = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -27,6 +29,7 @@ public class MowerBehaviour : MonoBehaviour
         {
             if (!move)
             {
+                src.Play();
                 GetComponent<ParticleSystem>().Play();
                 transform.position = transform.position + (transform.forward*2);
                 move = true;

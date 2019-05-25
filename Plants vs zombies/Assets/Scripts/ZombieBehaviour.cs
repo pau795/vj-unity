@@ -7,6 +7,7 @@ public class ZombieBehaviour : MonoBehaviour
     float speed, attack, rateOfFire;
     Animator animator;
     SkinnedMeshRenderer rend;
+    public GameObject damageText;
 
     public GameObject spawnPS;
 
@@ -87,6 +88,7 @@ public class ZombieBehaviour : MonoBehaviour
 
     public void die()
     {
+        SoundManager.PlaySound("zombieDeath");
         speed = 0;
         dead = true;
         GetComponent<Collider>().enabled = false;
@@ -130,6 +132,9 @@ public class ZombieBehaviour : MonoBehaviour
         {
             attack = GetComponent<ObjectStats>().attack;
             target.GetComponent<ObjectStats>().HP -= attack;
+            target.GetComponent<ObjectStats>().updateOverlay();
+            GameObject dt = (GameObject)Instantiate(damageText, target.transform.position, damageText.transform.rotation);
+            dt.GetComponent<TextMesh>().text = attack.ToString();
             if (target.GetComponent<ObjectStats>().HP <= 0)
             {
                 attacking = false;

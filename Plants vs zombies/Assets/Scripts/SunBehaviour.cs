@@ -5,8 +5,9 @@ using UnityEngine.EventSystems;
 
 public class SunBehaviour : MonoBehaviour
 {
-
+    public GameObject sunClickText;
     public GameObject pso;
+    public int sunProfit;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,8 +25,11 @@ public class SunBehaviour : MonoBehaviour
             {
                 if (hit.collider.gameObject == gameObject) {
                     //Debug.DrawRay(ray.origin, ray.direction * 100, Color.yellow, 3);
+                    SoundManager.PlaySound("coin");
+                    GameObject pt = (GameObject) Instantiate(sunClickText, transform.position, sunClickText.transform.rotation);
+                    pt.GetComponent<TextMesh>().text = "+ " + sunProfit.ToString() + " suns";
                     Instantiate(pso, transform.position, pso.transform.rotation);
-                    SceneElements.sunCount += 10;
+                    SceneElements.sunCount += sunProfit;
                     SceneElements.change = true;
                     Destroy(gameObject);
                 }

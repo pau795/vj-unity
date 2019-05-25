@@ -1313,9 +1313,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 100
   HP: 0
-  attack: 30
+  attack: 10
   speed: 1
   rateOfFire: 1
+  frozen: 0
   displayText: {fileID: 2699030496684511275}
   displayText2: {fileID: 5617291438388451471}
   displayText3: {fileID: 6913689324599412438}

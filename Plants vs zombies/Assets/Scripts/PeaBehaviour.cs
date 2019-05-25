@@ -42,8 +42,9 @@ public class PeaBehaviour : MonoBehaviour
     }
 
     void shoot(){
-       GameObject g = (GameObject) Instantiate(bullet, transform.position + new Vector3(1.0f, 2.2f, 0.0f), transform.rotation);
-       g.GetComponent<ShotMovement>().attack = GetComponent<ObjectStats>().attack;
+        GameObject g = (GameObject) Instantiate(bullet, transform.position + new Vector3(1.0f, 2.2f, 0.0f), transform.rotation);
+        g.GetComponent<ShotMovement>().attack = GetComponent<ObjectStats>().attack;
+        SoundManager.PlaySound("pop");
     }
    
 

@@ -42,6 +42,7 @@ public class ChomperBehaviour : MonoBehaviour
 
     public void doDamage()
     {
+        SoundManager.PlaySound("chomperAttack");
         GameObject g = (GameObject)Instantiate(bullet, transform.position + new Vector3(7f, 2.2f, 0.5f), transform.rotation);
         g.GetComponent<ChomperDamage>().attack = GetComponent<ObjectStats>().attack;
     }
