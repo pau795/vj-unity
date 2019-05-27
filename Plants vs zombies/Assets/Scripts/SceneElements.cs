@@ -16,24 +16,28 @@ public class SceneElements : MonoBehaviour
 
     public GameObject standardZombie;
     public GameObject bucketZombie;
+    public GameObject runnerZombie;
 
-    public static int sunCount = 200;
-    public static bool change = false;
+    public static int sunCount;
+    public static bool change;
 
-    static int zombiesOut = 0;
-    static int maxZombiesOut = 5;
+    static int zombiesOut;
+    static int maxZombiesOut;
 
     public Text sunScore;
+    public Text ZombOutText;
+    public static bool zmbout;
 
     public GameObject winMenu, loseMenu;
 
     public TextAsset levelData;
 
+    public int numLevel;
     public static int remainingZombies;
     public int actualRound;
     public float killed = 0;
-    public static bool win = false;
-    public static bool lose = false;
+    public static bool win;
+    public static bool lose;
 
     Level level;
 
@@ -78,23 +82,32 @@ public class SceneElements : MonoBehaviour
 
     public static void zombieOut() {
         ++zombiesOut;
-        print(zombiesOut);
+        zmbout = true;
         if (zombiesOut == maxZombiesOut) lose = true;
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        numLevel = MainMenu.level-1;
+        Time.timeScale = 1f;
         updateSunScore();
         for (int i = 0; i < 5; ++i)
         {
             Instantiate(mower, transform.position + new Vector3(-6.5f, 0f,(float) i * 5), mower.transform.rotation);
         }
+        sunCount = 200;
+        change = true;
+        zombiesOut = 0;
+        zmbout = false;
+        maxZombiesOut = 5;
+        lose = false;
+        win = false;
         Instantiate(fence, transform.position + new Vector3(4.5f, 0.0f, 24.0f), fence.transform.rotation);
         Instantiate(fence, transform.position + new Vector3(-26.5f, 0.0f, 24.0f), fence.transform.rotation);
         Instantiate(fence, transform.position + new Vector3(34.5f, 0.0f, 24.0f), fence.transform.rotation);
         InvokeRepeating("generateSuns", 1.0f, 1.0f);
-        loadLevel(0);
+        loadLevel(numLevel);
         StartCoroutine("zombieSpawn");
     }
 
@@ -119,11 +132,15 @@ public class SceneElements : MonoBehaviour
     {
         if (lose)
         {
+            SoundManager.PlaySound("lose");
+            lose = false;
             Time.timeScale = 0f;
             loseMenu.SetActive(true);
         }
         if (win)
         {
+            SoundManager.PlaySound("win");
+            win = false;
             Time.timeScale = 0f;
             winMenu.SetActive(true);
         }
@@ -132,6 +149,11 @@ public class SceneElements : MonoBehaviour
         {
             updateSunScore();
             change = false;
+        }
+        if (zmbout)
+        {
+            ZombOutText.text = "Zombies Escapados : " + zombiesOut.ToString() + " / " + maxZombiesOut.ToString();
+            zmbout = false;
         }
         LevelText.text = "Nivel:" + (level.numLvl).ToString();
         RoundText.text = "Ronda:" + (actualRound).ToString();
@@ -201,6 +223,7 @@ public class SceneElements : MonoBehaviour
                 GameObject zombie = standardZombie;
                 if (type == 1) zombie = standardZombie;
                 else if (type == 2) zombie = bucketZombie;
+                else if (type == 3) zombie = runnerZombie;
                 for (int zn = 0; zn < num; ++zn)
                 {
                     int row = Random.Range(0, 5);

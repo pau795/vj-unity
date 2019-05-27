@@ -39,11 +39,15 @@ public class ObjectStats : MonoBehaviour
     {
         if (HP <= 0 && !dead)
         {
-            if (gameObject.layer == 11) SoundManager.PlaySound("zombieDeath");
+            dead = true;
+            if (gameObject.layer == 11)
+            {
+                GetComponent<ZombieBehaviour>().dead = true;
+                SoundManager.PlaySound("zombieDeath");
+            }
             else if (gameObject.layer == 10) SoundManager.PlaySound("falling");
             GetComponent<Collider>().enabled = false;
             GetComponent<Animator>().SetTrigger("dead");
-            dead = true;
         }
         overlayCheck();
     }

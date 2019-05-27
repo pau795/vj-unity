@@ -154,13 +154,18 @@ PrefabInstance:
     - target: {fileID: 3607719036991239625, guid: 7d684eed8ec832a4d927bf8b0ed0d068,
         type: 3}
       propertyPath: rateOfFire
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3607719036991239625, guid: 7d684eed8ec832a4d927bf8b0ed0d068,
         type: 3}
       propertyPath: displayText
       value: 
       objectReference: {fileID: 6797591838831440981}
+    - target: {fileID: 3607719036991239625, guid: 7d684eed8ec832a4d927bf8b0ed0d068,
+        type: 3}
+      propertyPath: attack
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 8664000391699788642, guid: 7d684eed8ec832a4d927bf8b0ed0d068,
         type: 3}
       propertyPath: m_LocalPosition.x

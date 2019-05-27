@@ -13,18 +13,18 @@ public class PlantSpawner : MonoBehaviour
     public int sunCost;
     void OnMouseEnter() {
         if (ready){
-            color = GetComponent<Renderer>().material.color;
             if (used || blocked) GetComponent<Renderer>().material.color = Color.red;
             else GetComponent<Renderer>().material.color = Color.green;
         }
     }
     void OnMouseExit(){
-       if (ready) GetComponent<Renderer>().material.color = color;
+       GetComponent<Renderer>().material.color = color;
     }
     void OnMouseDown(){
         if (!used && ready && !blocked){
             GameObject obj = (GameObject)Instantiate(plant, transform.position+positionOffset, plant.transform.rotation);
             obj.GetComponent<ObjectStats>().tile = gameObject;
+            SoundManager.PlaySound("plantSpawn");
             SceneElements.sunCount -= sunCost;
             SceneElements.change = true;
             transform.parent.parent.gameObject.GetComponent<GardenFiller>().reset = true;
@@ -35,6 +35,7 @@ public class PlantSpawner : MonoBehaviour
 
     // Start is called before the first frame update
     void Start() {
+        color = GetComponent<Renderer>().material.color;
         used = false;
         ready = false;
         blocked = false;
@@ -63,6 +64,10 @@ public class PlantSpawner : MonoBehaviour
         else
         {
             blocked = false;
+        }
+        if(ready && (Input.GetKeyDown(KeyCode.Escape)|| Input.GetMouseButtonDown(1))){
+            transform.parent.parent.gameObject.GetComponent<GardenFiller>().reset = true;
+            GetComponent<Renderer>().material.color = color;
         }
     }
 }

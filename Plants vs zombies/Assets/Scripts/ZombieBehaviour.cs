@@ -15,7 +15,7 @@ public class ZombieBehaviour : MonoBehaviour
     int IdleHash = Animator.StringToHash("Base Layer.Zombie Idle");
 
     private GameObject target;
-    bool dead;
+    public bool dead;
     bool attacking;
     bool once;
 

@@ -13,6 +13,9 @@ public class SoundManager : MonoBehaviour
     public static AudioClip coin;
     public static AudioClip falling;
     public static AudioClip hit;
+    public static AudioClip plantSpawn;
+    public static AudioClip win;
+    public static AudioClip lose;
     public static AudioSource src;
 
 
@@ -30,6 +33,9 @@ public class SoundManager : MonoBehaviour
         coin = Resources.Load<AudioClip>("coin");
         falling = Resources.Load<AudioClip>("falling");
         hit = Resources.Load<AudioClip>("hit");
+        plantSpawn = Resources.Load<AudioClip>("plantSpawn");
+        win = Resources.Load<AudioClip>("win");
+        lose = Resources.Load<AudioClip>("lose");
         src = GetComponent<AudioSource>();
     }
 
@@ -43,7 +49,7 @@ public class SoundManager : MonoBehaviour
     {
         switch (sound){
             case "error":
-                src.PlayOneShot(error);
+                src.PlayOneShot(error, 0.5f);
                 break;
             case "pop":
                 src.PlayOneShot(pop);
@@ -68,6 +74,15 @@ public class SoundManager : MonoBehaviour
                 break;
             case "hit":
                 src.PlayOneShot(hit);
+                break;
+            case "plantSpawn":
+                src.PlayOneShot(plantSpawn);
+                break;
+            case "win":
+                src.PlayOneShot(win);
+                break;
+            case "lose":
+                src.PlayOneShot(lose);
                 break;
             default:
                 break;

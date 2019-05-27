@@ -16,7 +16,7 @@ public class ChomperBehaviour : MonoBehaviour
     void Update()
     {
         int layermask = LayerMask.GetMask("Zombies");
-        if (Physics.Raycast(transform.position + new Vector3(3, 3, 0), -transform.up, 3.5f, layermask))
+        if (Physics.Raycast(transform.position + new Vector3(3, 3, 0), -transform.up, 5f, layermask))
         {
             //Debug.DrawRay(transform.position + new Vector3(3, 3, 0), -transform.up * 3.5f, Color.yellow);
             animator.SetFloat("rateOfFire", GetComponent<ObjectStats>().rateOfFire);
@@ -43,7 +43,7 @@ public class ChomperBehaviour : MonoBehaviour
     public void doDamage()
     {
         SoundManager.PlaySound("chomperAttack");
-        GameObject g = (GameObject)Instantiate(bullet, transform.position + new Vector3(7f, 2.2f, 0.5f), transform.rotation);
+        GameObject g = (GameObject)Instantiate(bullet, transform.position + new Vector3(6.5f, 2.2f, 0.5f), transform.rotation);
         g.GetComponent<ChomperDamage>().attack = GetComponent<ObjectStats>().attack;
     }
 
